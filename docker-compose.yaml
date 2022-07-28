@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+    php-fpm:
+        container_name: test-php
+        build:
+            context: ./
+            dockerfile: ./docker/php-fpm/dockerfile/Dockerfile-dev
+            args:
+                - DOCKER_PHP_DATE_TIMEZONE=${DOCKER_PHP_DATE_TIMEZONE}
+        expose:
+            - 9000
